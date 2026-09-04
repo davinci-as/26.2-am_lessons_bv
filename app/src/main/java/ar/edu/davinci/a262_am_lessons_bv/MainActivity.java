@@ -13,14 +13,16 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    public int counter = 0;
     public void addNewEntry(View view) {
         Log.i("new-view", "Testing view");
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
-
+        counter++;
         for (int i = 0; i < 20; i++) {
             TextView textView = new TextView(this);
-            textView.setText("Nuevo texto");
+            textView.setText(
+                    String.format("Counter: %d - %d", counter, i)
+            );
             container.addView(textView);
         }
     }
