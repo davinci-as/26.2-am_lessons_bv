@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">26.2-am_lessons_bv</string>
+    <string name="default_text">Entrada por defecto</string>
+    <string name="cta_text">Agregar nueva entrada</string>
 </resources>
