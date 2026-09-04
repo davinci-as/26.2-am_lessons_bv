@@ -23,6 +23,7 @@
             android:layout_height="150dp">
 
             <LinearLayout
+                android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -31,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/default_text" />
+
             </LinearLayout>
         </ScrollView>
 
@@ -38,6 +40,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="addNewEntry"
             android:text="@string/cta_text" />
     </LinearLayout>
 

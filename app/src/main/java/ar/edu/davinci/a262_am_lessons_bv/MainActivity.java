@@ -1,6 +1,10 @@
 package ar.edu.davinci.a262_am_lessons_bv;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +13,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    public void addNewEntry(View view) {
+        Log.i("new-view", "Testing view");
+        LinearLayout container = (LinearLayout) findViewById(R.id.container);
+        TextView textView = new TextView(this);
+        textView.setText("Nuevo texto");
+        container.addView(textView);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
