@@ -13,12 +13,16 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
     public void addNewEntry(View view) {
         Log.i("new-view", "Testing view");
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
-        TextView textView = new TextView(this);
-        textView.setText("Nuevo texto");
-        container.addView(textView);
+
+        for (int i = 0; i < 20; i++) {
+            TextView textView = new TextView(this);
+            textView.setText("Nuevo texto");
+            container.addView(textView);
+        }
     }
 
 
