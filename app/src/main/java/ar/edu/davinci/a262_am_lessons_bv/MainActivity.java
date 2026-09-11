@@ -29,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(
                     String.format("Counter: %d - %d", counter, i)
             );
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), PreviewActivity.class);
+                    startActivity(intent);
+
+                }
+            });
             container.addView(textView);
         }
     }
