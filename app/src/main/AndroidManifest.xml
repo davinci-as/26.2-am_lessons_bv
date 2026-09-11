@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._262am_lessons_bv">
         <activity
+            android:name=".PreviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

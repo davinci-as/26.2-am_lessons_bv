@@ -1,5 +1,6 @@
 package ar.edu.davinci.a262_am_lessons_bv;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     public int counter = 0;
+
+    public void openPreview(View view) {
+        Intent intent = new Intent(this, PreviewActivity.class);
+        startActivity(intent);
+    }
     public void addNewEntry(View view) {
         Log.i("new-view", "Testing view");
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
