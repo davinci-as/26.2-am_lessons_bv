@@ -29,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(
                     String.format("Counter: %d - %d", counter, i)
             );
+            int finalI = i;
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(), PreviewActivity.class);
+                    intent.putExtra("counter", counter);
+                    intent.putExtra("index", finalI);
                     startActivity(intent);
 
                 }
