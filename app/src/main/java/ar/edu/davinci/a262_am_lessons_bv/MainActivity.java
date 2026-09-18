@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     public int counter = 0;
+    public final int DETAILS_UPDATE = 1;
 
     public void openPreview(View view) {
         Intent intent = new Intent(this, PreviewActivity.class);
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), PreviewActivity.class);
                     intent.putExtra("counter", counter);
                     intent.putExtra("index", finalI);
-                    startActivity(intent);
+                    startActivityForResult(intent, DETAILS_UPDATE);
 
                 }
             });
