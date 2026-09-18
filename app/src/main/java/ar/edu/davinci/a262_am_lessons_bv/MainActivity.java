@@ -30,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode != DETAILS_UPDATE) return;
         if(resultCode != RESULT_OK) return;
 
-        //TextView textViewer = findViewById(R.id.textViewer);
+        if(!(data != null && data.hasExtra("newValue"))) return;
+        String newValue = data.getStringExtra("newValue");
 
+        TextView textViewer = findViewById(R.id.textViewer);
+        textViewer.setText(newValue);
         Log.i("activity-result", "ok");
 
     }
