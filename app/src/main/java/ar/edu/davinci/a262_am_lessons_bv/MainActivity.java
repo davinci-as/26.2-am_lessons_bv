@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,6 +22,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PreviewActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode != DETAILS_UPDATE) return;
+        if(resultCode != RESULT_OK) return;
+
+        //TextView textViewer = findViewById(R.id.textViewer);
+
+        Log.i("activity-result", "ok");
+
+    }
+
     public void addNewEntry(View view) {
         Log.i("new-view", "Testing view");
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
