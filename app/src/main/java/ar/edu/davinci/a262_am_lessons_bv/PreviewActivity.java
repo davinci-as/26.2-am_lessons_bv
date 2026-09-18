@@ -15,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class PreviewActivity extends AppCompatActivity {
 
     public void saveData(View view) {
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
         finish();
     }
 
