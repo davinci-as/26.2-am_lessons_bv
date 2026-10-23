@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -37,6 +38,14 @@ public class PreviewActivity extends AppCompatActivity {
             String value = String.format("%d - %d", counter, index);
             TextView textInput = findViewById(R.id.textInput);
             textInput.setText(String.valueOf(value));
+
+            //llamamos a la asynctask
+            String imageURL = "https://rickandmortyapi.com/api/character/avatar/754.jpeg";
+            String imageURL2 = "https://rickandmortyapi.com/api/character/avatar/807.jpeg";
+            //imageView a actualizar
+            ImageView detailsImage = findViewById(R.id.detailsImage);
+            //verifiquemos conexión
+            new ImageDownloader(detailsImage).execute(counter == 1 ? imageURL : imageURL2);
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

@@ -22,6 +22,12 @@
             android:layout_height="wrap_content"
             android:text="Bienvenida" />
 
+        <ImageView
+            android:id="@+id/detailsImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
         <EditText
             android:id="@+id/textInput"
             android:layout_width="match_parent"
