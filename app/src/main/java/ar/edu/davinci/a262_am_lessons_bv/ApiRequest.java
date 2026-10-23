@@ -3,6 +3,8 @@ package ar.edu.davinci.a262_am_lessons_bv;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,16 +47,12 @@ public class ApiRequest extends AsyncTask<String, Integer, String> {
     protected void onPostExecute(String stringResponse) {
         super.onPostExecute(stringResponse);
         if(stringResponse == null) return;
+        Gson gson = new Gson();
+        ApiResponse response = gson.fromJson(stringResponse, ApiResponse.class);
         //actualizo ui
-        try {
-            JSONObject response =  new JSONObject(stringResponse);
-            JSONArray results = (JSONArray) response.get("results");
-            JSONObject rickSanchez = (JSONObject) results.get(11);
-            String rickName = rickSanchez.get("name").toString();
-            Log.i("api-request", rickName);
-
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
+        Character character = response.getResults().get(18);
+        String name = character.getName();
+        String gender = character.getGender();
+        Log.i("api-request", String.format("%s (%s)", name, gender));
     }
 }
