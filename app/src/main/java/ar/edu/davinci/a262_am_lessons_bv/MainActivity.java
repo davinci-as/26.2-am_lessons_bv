@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
             new ApiRequest().execute(query);
         } else {
             // redireccion al activity login -> Intent
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
